@@ -1,5 +1,5 @@
 {
-  "name": "worker-loader",
+  "name": "@neo-one/worker-loader",
   "version": "2.0.0",
   "description": "worker loader module for webpack",
   "license": "MIT",
@@ -11,6 +11,9 @@
   "main": "dist/cjs.js",
   "engines": {
     "node": ">= 6.9.0 < 7.0.0 || >= 8.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "start": "npm run build -- -w",

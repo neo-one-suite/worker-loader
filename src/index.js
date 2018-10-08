@@ -53,8 +53,10 @@ export function pitch(request) {
     namedChunkFilename: null,
   };
 
+  const subCache = `subcache ${__dirname} ${request}`;
+
   worker.compiler = this._compilation.createChildCompiler(
-    'worker',
+    subCache,
     worker.options
   );
 
@@ -69,8 +71,6 @@ export function pitch(request) {
   new SingleEntryPlugin(this.context, `!!${request}`, 'main').apply(
     worker.compiler
   );
-
-  const subCache = `subcache ${__dirname} ${request}`;
 
   worker.compilation = (compilation) => {
     if (compilation.cache) {
